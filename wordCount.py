@@ -1,6 +1,5 @@
 import os
 import sys
-import re
 
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
@@ -15,7 +14,7 @@ def wordCounter():
     words = contents.split()
     words = [i.strip('\n') for i in words]
     words = [i.replace('"', '') for i in words]
-    unwanted = ',.--:'
+    unwanted = ',.--:;'
     words = [i.lower() for i in words]
     dictionary = {}
     for i in words:

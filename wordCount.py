@@ -1,8 +1,16 @@
+import os
+import sys
 import re
 
+inputFile = sys.argv[1]
+outputFile = sys.argv[2]
+
+if not os.path.exists(inputFile):
+    print("This file does not exist")
+    exit()
 
 def wordCounter():
-    f = open("declaration.txt", "r")
+    f = open(inputFile, "r")
     contents = f.read()
     words = contents.split()
     words = [i.strip('\n') for i in words]
@@ -19,7 +27,7 @@ def wordCounter():
 
 
 def writeToFile(Dict):
-    f = open("output.txt", "w+")
+    f = open(outputFile, "w+")
     for key in sorted(Dict.keys()):
         f.write("%s %s \r\n" % (key, Dict[key]))
 

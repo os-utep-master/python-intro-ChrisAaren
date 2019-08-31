@@ -27,7 +27,6 @@ def wordCounter():
     finally:
         f.close()
 
-
 def writeToFile(Dict):
     try:
         f = open(outputFile, "w+")
@@ -36,5 +35,5 @@ def writeToFile(Dict):
     finally:
         f.close()
 
-    if __name__ == "__main__":
-        wordCounter()
+if __name__ == "__main__":
+    wordCounter()
